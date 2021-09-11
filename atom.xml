@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://best7l.github.io</id>
     <title>best7l</title>
-    <updated>2021-09-11T15:45:56.596Z</updated>
+    <updated>2021-09-11T15:47:34.421Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://best7l.github.io"/>
     <link rel="self" href="https://best7l.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://best7l.github.io/images/avatar.png</logo>
     <icon>https://best7l.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, best7l</rights>
+    <entry>
+        <title type="html"><![CDATA[php]]></title>
+        <id>https://best7l.github.io/post/php/</id>
+        <link href="https://best7l.github.io/post/php/">
+        </link>
+        <updated>2021-09-11T15:46:16.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>&lt;?php
+echo 'hello world!';
+&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Friends]]></title>
         <id>https://best7l.github.io/post/hello-friends/</id>
