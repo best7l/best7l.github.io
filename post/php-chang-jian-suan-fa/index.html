@@ -2,18 +2,23 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Friends | best7l</title>
+<title>PHP常见算法 | best7l</title>
 <link rel="shortcut icon" href="https://best7l.github.io/favicon.ico?v=1632113454086">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://best7l.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hello Friends | best7l - Atom Feed" href="https://best7l.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="PHP常见算法 | best7l - Atom Feed" href="https://best7l.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="👏  Welcome to Zhang Wenjun's blog
-✍️  This blog is a place for me to record my life, mood, knowledge, notes, and creati..." />
-    <meta name="keywords" content="Gridea" />
+    <meta name="description" content="PHP常见算法
+冒泡排序
+function dubbleSort($arr)
+{
+    $length = count($arr);
+    if ($length == 1) return $arr;
+    for ($i = 0; ..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -75,66 +80,171 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Friends
+              PHP常见算法
             </h2>
             <div class="post-info">
               <span>
-                2021-05-01
+                2021-09-20
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
-              
-                <a href="https://best7l.github.io/tag/peebCDQKS/" class="post-tag">
-                  # Gridea
-                </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://best7l.github.io/post-images/hello-friends.jpg" alt="">
+              <img class="post-feature-image" src="https://best7l.github.io/post-images/php-chang-jian-suan-fa.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  Welcome to <strong>Zhang Wenjun</strong>'s blog<br>
-✍️  This <strong>blog</strong> is a place for me to record my life, mood, knowledge, notes, and creativity...</p>
-<!-- more -->
-<p><a href="https://github.com/best7l">Github</a><br>
-<a href="https://best7l.github.io/">Blog 主页</a></p>
-<!-- [示例网站](http://fehey.com/) -->
-<!-- ## 特性👇 -->
-<!-- 📝  你可以使用最酷的 **Markdown** 语法，进行快速创作   -->
-<!-- 🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片   -->
-<!-- 🏷️  你可以对文章进行标签分组  
+                <h1 id="php常见算法">PHP常见算法</h1>
+<h3 id="冒泡排序">冒泡排序</h3>
+<pre><code>function dubbleSort($arr)
+{
+    $length = count($arr);
+    if ($length == 1) return $arr;
+    for ($i = 0; $i &lt; $length; $i++) {
+        $isOver = false
+      for ($j = 0; $j &lt; $length - $i - 1; $j++) {
+          if ($arr[$j] &gt; $arr[$j + 1]) {
+              $temp = $arr[$j];
+              $arr[$j] = $arr[$j + 1];
+              $arr[$j + 1] = $temp;
+              $isOver = true;
+          }
+      }
+      if (!$isOver) {
+          break;
+      }
+   }
+    return $arr;
+}
+</code></pre>
+<h3 id="选择排序">选择排序</h3>
+<pre><code>function selectSort($arr)
+{
+   $len = count($arr);
+   for($i = 0;$i&lt;$length -1;$i++){
+      $min = $i;
+      for($j = $i + 1;$j&lt;$length;$j++){
+         if($arr[$j] &lt; $arr[$i]){
+              $min = $j;
+         }
+      }
+      
+      if($i != $min){
+          $temp = $arr[$i];
+          $arr[$i] = $arr[$min];
+          $arr[$min] = $temp;
+      }
+   }
+   return $arr;
+}
+</code></pre>
+<h3 id="快速排序">快速排序</h3>
+<pre><code>function quickSort($arr)
+{
+    if(count($arr) &lt;= 1) return $arr;
+    
+    $mid = $arr[0];
+    $left = [];
+    $right = [];
+    
+    for($i = 1;$i&lt;count($arr);$i++){
+       if($arr[$i] &gt; $mid){
+            $right[] = $arr[$i];
+       }else{
+            $left[] = $arr[$i];
+       }
+    }
+    
+    $left = quickSort($left);
+    $right = quickSort($right);
+    
+    return array_merge($left,[$mid],$right);
+}
+</code></pre>
+<h3 id="插入排序">插入排序</h3>
+<pre><code>function insertSort($arr)
+{
+    $length = count($arr);
+    for ($i = 1; $i &lt; $length; $i++) {
+        $pos = $i;
+        $key = $arr[$i];
+        while ($pos &gt; 0 &amp;&amp; $arr[$pos - 1] &gt; $key) {
+            $arr[$pos] = $arr[$pos - 1];
+            $pos = $pos - 1;
+        }
+        $arr[$pos] = $key;
+    }
+    return $arr;
+}
+</code></pre>
+<h3 id="二分查找">二分查找</h3>
+<pre><code class="language-php">function search($arr, $target)
+{
+    return recursion(&amp;$arr, 0, count($arr) - 1, $target);
+}
 
-📋  你可以自定义菜单，甚至可以创建外部链接菜单  
-
-💻  你可以在 **Windows**，**MacOS** 或 **Linux** 设备上使用此客户端  
-
-🌎  你可以使用 **𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌** 或 **Coding Pages** 向世界展示，未来将支持更多平台  
-
-💬  你可以进行简单的配置，接入 [Gitalk](https://github.com/gitalk/gitalk) 或 [DisqusJS](https://github.com/SukkaW/DisqusJS) 评论系统  
-
-🇬🇧  你可以使用**中文简体**或**英语**  
-
-🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力  
-
-🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步  
-
-🌱 当然 **Gridea** 还很年轻，有很多不足，但请相信，它会不停向前 🏃
-
-未来，它一定会成为你离不开的伙伴
-
-尽情发挥你的才华吧！ -->
-<p>😘 Enjoy~</p>
+function recursion($arr, $l, $r, $tarfet)
+{
+    $mid = intval(($l + $r) / 2);
+    if ($l &gt; $r) return -1;
+    if ($target &gt; $arr[$mid]) {
+        return recursion($arr, $arr[$mid] + 1, $r, $tarfet);
+    } elseif ($target &lt; $arr[$mid]) {
+        return recursion($arr, $l, $arr[$mid] - 1, $tarfet);
+    } else {
+        return $mid;
+    }
+}
+</code></pre>
+<h3 id="字符串反转">字符串反转</h3>
+<pre><code>function str_rev($str)
+{
+     $i = 0;
+     while(1){
+       if(!isset($str)){
+          break;
+       }
+       $i++;
+     }
+     for($j = $i -1;$j&gt;=0;$j--){
+          $temp .= $str[$j];
+     }
+     return $temp;
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#php%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95">PHP常见算法</a><br>
+*
+<ul>
+<li><a href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F">冒泡排序</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F">选择排序</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F">快速排序</a></li>
+<li><a href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">插入排序</a></li>
+<li><a href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE">二分查找</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%8D%E8%BD%AC">字符串反转</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://best7l.github.io/post/phpstorm-tong-bu-dai-ma-dao-xu-ni-ji/">
+              <h3 class="post-title">
+                phpStorm同步代码到虚拟机
+              </h3>
+            </a>
+          </div>
         
 
         
